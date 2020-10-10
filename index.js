@@ -51,7 +51,21 @@ function createBoard() {
         // put square in squares array
         squares.push(square);
         //console.log(squares);
+
+        // Adding layouts using if else statements
+        if(layout[i] === 0) {
+            squares[i].classList.add('pac-dot');
+        } else if(layout[i] === 1) {
+            squares[i].classList.add('wall')
+        } else if (layout[i] === 2) {
+            squares[i].classList.add('ghost-liar') 
+        } else if (layout[i] === 3) {
+            squares[i].classList.add('power-pellet')
+        } else {
+            squares[i].classList.add('empty')
+        }
     }
+    //console.log(squares);
 }
 createBoard();
 
