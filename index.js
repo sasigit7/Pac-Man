@@ -74,4 +74,42 @@ let pacmanCurrentIndex = 490;
 // Add pacman in the squares grid 
 squares[pacmanCurrentIndex].classList.add('pac-man');
 
+// Moving pacman with keys and EventListeners
+// http://keycode.info/
+// left - 37
+// up key - 38
+// right - 39
+// down key - 40
+function control(e) {
+    // Using if else statement
+    // if(e.keyCode === 40) {
+    //     console.log('pressed down');
+    // } else if (e.keyCode === 39) {
+    //     console.log('pressed right');
+    // } else if (e.keyCode === 38) {
+    //     console.log('pressed up');
+    // } else if(e.keyCode === 37) {
+    //     console.log('pressed left')
+    // } else {
+    //     console.log('pressed other key');
+    // }
+
+    // Using switch statement 
+    switch(e.keyCode) {
+      case 40:
+        console.log('pressed down');
+        break;
+      case 39:
+        console.log('pressed right');
+        break;
+      case 38:
+        console.log('pressed up');
+        break;
+      case 37:
+        console.log('pressed left');
+        break; 
+    }
+}
+document.addEventListener('keyup', control);
+
 
