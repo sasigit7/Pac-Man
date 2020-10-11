@@ -1,14 +1,57 @@
 html, body {
-    margin: 10;
-    padding: 10;
+    margin: 20px;
+    padding: 10px;
+    background-color: blanchedalmond;
 }
 
+h3 {
+    animation-name: scoreAnim;
+    animation-duration: 4s;
+    text-align: center;
+    border: 15px solid pink;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 15px;
+    background: #73AD21;
+    width: 370px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+@keyframes scoreAnim {
+    from {
+        background-color: rgb(214, 89, 89);
+        color: black;
+    }
+
+    to {
+        background-color: yellow;
+        color: black;
+    }
+}
+
+h1 {
+    background-color: bisque;
+    text-align: center;
+    padding: 30px;
+    border: 4px double;
+    width: 370px;
+    margin: 0 auto;
+}
+
+
+
+#score {
+    font-size: 20px;
+}
 .grid {
     display: flex;
     flex-wrap: wrap;
     width: 420px;
     height: 420px;
     border: 3px solid black;
+    margin: 0 auto;
 }
 
 .grid div {
