@@ -100,22 +100,37 @@ function control(e) {
     switch (e.keyCode) {
         case 40:
             console.log('pressed down');
-            if (pacmanCurrentIndex + width < width * width) // (490 + 28) < (28 * 28) => 518 < 784
+             if (
+                // Avoiding walls by using classList.contains()
+                !squares[pacmanCurrentIndex + width].classList.contains('wall') &&
+                pacmanCurrentIndex + width < width * width // (490 + 28) < (28 * 28) => 518 < 784
+                ) 
             pacmanCurrentIndex += width;
             break;
         case 39 : 
             console.log('pressed right');
-            if (pacmanCurrentIndex % width < width - 1) // (490 % 28) < (28 - 1) => 17.5 < 27
-            pacmanCurrentIndex += 1;
+            if (
+                // Avoiding walls by using classList.contains()
+                !squares[pacmanCurrentIndex + 1].classList.contains('wall') &&
+                    pacmanCurrentIndex % width < width - 1) // (490 % 28) < (28 - 1) => 17.5 < 27
+                pacmanCurrentIndex += 1;
             break;
         case 38:
             console.log('pressed up');
-            if (pacmanCurrentIndex - width >= 0) // 490 - 28 >= 0 => 462 >= 0
+            if (
+                // Avoiding walls by using classList.contains()
+                !squares[pacmanCurrentIndex - width].classList.contains('wall') &&
+                pacmanCurrentIndex - width >= 0 // 490 - 28 >= 0 => 462 >= 0
+                ) 
             pacmanCurrentIndex -= width;
             break;
         case 37:
             console.log('pressed left');
-            if (pacmanCurrentIndex % width !== 0) // 490 % 28 !== 0 => 17.5 !== 0
+            if (
+                // Avoiding walls by using classList.contains()
+                !squares[pacmanCurrentIndex - 1].classList.contains('wall') &&
+                pacmanCurrentIndex % width !== 0 // 490 % 28 !== 0 => 17.5 !== 0
+                ) 
                 pacmanCurrentIndex -= 1;
             break;
         
