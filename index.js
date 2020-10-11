@@ -188,4 +188,13 @@ const ghosts = [
 // Drawing the ghosts using forEach() method: 
   ghosts.forEach(ghost => squares[ghost.startIndex].classList.add(ghost.className)); 
 
+// Passing parameters into functions
+  ghosts.forEach(ghost => moveGhost(ghost));
+
+function moveGhost(ghost) {
+    console.log('Moved ghost');
+    const directions = [-1, +1, -width, +width];
+    let direction = directions[Math.floor((Math.random() * directions.length))];
+    console.log(direction);
+}
 
