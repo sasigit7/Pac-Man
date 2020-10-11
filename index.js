@@ -118,6 +118,10 @@ function control(e) {
                 !squares[pacmanCurrentIndex + 1].classList.contains('wall') &&
                     pacmanCurrentIndex % width < width - 1) // (490 % 28) < (28 - 1) => 17.5 < 27
                 pacmanCurrentIndex += 1;
+                // Implementing Pacmans shortcut using indexes
+                if(pacmanCurrentIndex === 391) {
+                    pacmanCurrentIndex = 364;
+                }
             break;
         case 38:
             console.log('pressed up');
@@ -140,6 +144,10 @@ function control(e) {
                 pacmanCurrentIndex % width !== 0 // 490 % 28 !== 0 => 17.5 !== 0
                 ) 
                 pacmanCurrentIndex -= 1;
+                // Implementing Pacmans shortcut using indexes
+                if(pacmanCurrentIndex === 364) {
+                    pacmanCurrentIndex = 391;
+                }
             break;
         
     }
