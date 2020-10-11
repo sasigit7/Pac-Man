@@ -196,5 +196,18 @@ function moveGhost(ghost) {
     const directions = [-1, +1, -width, +width];
     let direction = directions[Math.floor((Math.random() * directions.length))];
     console.log(direction);
+
+    // Moving ghosts at specific speed using setInterval() method:
+    ghost.timerId = setInterval(function() {
+        //remove any ghost
+        squares[ghost.currentIndex].classList.remove(ghost.className);
+        //add direction to current index
+        ghost.currentIndex += direction;
+        //add ghost class 
+        squares[ghost.currentIndex].classList.add(ghost.className);
+
+    }, ghost.speed);
 }
+
+
 
