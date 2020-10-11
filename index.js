@@ -101,7 +101,9 @@ function control(e) {
         case 40:
             console.log('pressed down');
              if (
-                // Avoiding walls by using classList.contains()
+                //Avoiding the ghost-lair by using classList.contains() method:
+                !squares[pacmanCurrentIndex + width].classList.contains('ghost-lair') &&
+                // Avoiding walls by using classList.contains() method: 
                 !squares[pacmanCurrentIndex + width].classList.contains('wall') &&
                 pacmanCurrentIndex + width < width * width // (490 + 28) < (28 * 28) => 518 < 784
                 ) 
@@ -110,7 +112,9 @@ function control(e) {
         case 39 : 
             console.log('pressed right');
             if (
-                // Avoiding walls by using classList.contains()
+                //Avoiding the ghost-lair by using classList.contains() method:
+                !squares[pacmanCurrentIndex + 1].classList.contains('ghost-lair') &&
+                // Avoiding walls by using classList.contains() method: 
                 !squares[pacmanCurrentIndex + 1].classList.contains('wall') &&
                     pacmanCurrentIndex % width < width - 1) // (490 % 28) < (28 - 1) => 17.5 < 27
                 pacmanCurrentIndex += 1;
@@ -118,7 +122,9 @@ function control(e) {
         case 38:
             console.log('pressed up');
             if (
-                // Avoiding walls by using classList.contains()
+                //Avoiding the ghost-lair by using classList.contains() method:
+                !squares[pacmanCurrentIndex - width].classList.contains('ghost-lair') &&
+                // Avoiding walls by using classList.contains() method: 
                 !squares[pacmanCurrentIndex - width].classList.contains('wall') &&
                 pacmanCurrentIndex - width >= 0 // 490 - 28 >= 0 => 462 >= 0
                 ) 
@@ -127,7 +133,9 @@ function control(e) {
         case 37:
             console.log('pressed left');
             if (
-                // Avoiding walls by using classList.contains()
+                //Avoiding the ghost-lair by using classList.contains() method:
+                !squares[pacmanCurrentIndex - 1].classList.contains('ghost-lair') &&
+                // Avoiding walls by using classList.contains() method: 
                 !squares[pacmanCurrentIndex - 1].classList.contains('wall') &&
                 pacmanCurrentIndex % width !== 0 // 490 % 28 !== 0 => 17.5 !== 0
                 ) 
