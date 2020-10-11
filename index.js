@@ -171,6 +171,10 @@ class Ghost {
         this.className = className;
         this.startIndex = startIndex;
         this.speed = speed;
+        //storing other variables
+        this.currentIndex = startIndex;
+        this.isScared = false;
+        this.timerId = NaN;
     }
 }
 
