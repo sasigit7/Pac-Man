@@ -174,13 +174,14 @@ class Ghost {
     }
 }
 
-ghosts = [
+const ghosts = [
     new Ghost('chinky', 348, 250),
     new Ghost('pinky', 376, 400),
     new Ghost('rosy', 351, 300),
     new Ghost('romy', 379, 500)
 ];
 
-
+// Drawing the ghosts using forEach() method: 
+  ghosts.forEach(ghost => squares[ghost.startIndex].classList.add(ghost.className)); 
 
 
