@@ -40,3 +40,23 @@ html, body {
     border: none;
 }
 
+.chinky {
+    background-color: red;
+    border: none;
+}
+
+.pinky {
+    background-color: pink;
+    border: none;
+}
+
+.rosy {
+    background-color: blue;
+    border: none;
+}
+
+.romy {
+    background-color: green;
+    border: none;
+}
+

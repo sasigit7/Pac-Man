@@ -165,3 +165,22 @@ function control(e) {
             scoreDisplay.innerHTML = score;
         }
     }
+// Making ghosts using classes and constructor method:
+class Ghost {
+    constructor(className, startIndex, speed) {
+        this.className = className;
+        this.startIndex = startIndex;
+        this.speed = speed;
+    }
+}
+
+ghosts = [
+    new Ghost('chinky', 348, 250),
+    new Ghost('pinky', 376, 400),
+    new Ghost('rosy', 351, 300),
+    new Ghost('romy', 379, 500)
+];
+
+
+
+
