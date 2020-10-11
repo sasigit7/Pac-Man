@@ -171,10 +171,12 @@ function control(e) {
     function powerPelletEaten() {
       //if square pacman is in contains a power pellet
      if(squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
+      // removing class of power-pellet from square
+      squares[pacmanCurrentIndex].classList.remove('power-pellet');
       //add a score of 10
       score += 10;
      //change each of the four ghosts to isScared
-      ghosts.forEach(ghost => ghost.isScared === true);
+      ghosts.forEach(ghost => ghost.isScared = true);
       // use setTimeout to unscare ghosts after 10 seconds
       setTimeout(unScareGhosts, 10000);
      }
@@ -228,13 +230,18 @@ function moveGhost(ghost) {
         ) {
         //remove any ghost
         squares[ghost.currentIndex].classList.remove(ghost.className);
-        squares[ghost.currentIndex].classList.remove('ghost');
+        squares[ghost.currentIndex].classList.remove('ghost', 'scared-ghost');
         //add direction to current index
         ghost.currentIndex += direction;
         //add ghost class 
         squares[ghost.currentIndex].classList.add(ghost.className);
         squares[ghost.currentIndex].classList.add('ghost');
         } else direction = directions[Math.floor((Math.random() * directions.length))];
+
+        // Styling our scared ghosts
+        if(ghost.isScared) {
+          squares[ghost.currentIndex].classList.add('scared-ghost');
+        }
     }, ghost.speed);
 }
 
