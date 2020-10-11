@@ -154,6 +154,7 @@ function control(e) {
     }
         squares[pacmanCurrentIndex].classList.add('pac-man');
         pacDotsEaten();
+        powerPelletEaten();
         }
         document.addEventListener('keyup', control);
 
@@ -165,6 +166,24 @@ function control(e) {
             scoreDisplay.innerHTML = score;
         }
     }
+
+    // Eating power pellets using setTimeout() method:
+    function powerPelletEaten() {
+      //if square pacman is in contains a power pellet
+     if(squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
+      //add a score of 10
+      score += 10;
+     //change each of the four ghosts to isScared
+      ghosts.forEach(ghost => ghost.isScared === true);
+      // use setTimeout to unscare ghosts after 10 seconds
+      setTimeout(unScareGhosts, 10000);
+     }
+    }
+
+    function unScareGhosts() {
+        ghosts.forEach(ghost => ghost.isScared = false);
+    }
+
 // Making ghosts using classes and constructor method:
 class Ghost {
     constructor(className, startIndex, speed) {
