@@ -6,7 +6,7 @@ let squares = [];
 // Store total number of square grids in a layout array: 28 * 28 = 784
 // 0 represents pac-dots 
 // 1 represents wall 
-// 2 represents ghost-liar 
+// 2 represents ghost-lair 
 // 3 represents power-pellet 
 // 4 represents empty 
 const layout = [
@@ -58,7 +58,7 @@ function createBoard() {
         } else if(layout[i] === 1) {
             squares[i].classList.add('wall')
         } else if (layout[i] === 2) {
-            squares[i].classList.add('ghost-liar') 
+            squares[i].classList.add('ghost-lair') 
         } else if (layout[i] === 3) {
             squares[i].classList.add('power-pellet')
         } else {
@@ -69,5 +69,9 @@ function createBoard() {
 }
 createBoard();
 
+// Starting position of pac-man
+let pacmanCurrentIndex = 490;
+// Add pacman in the squares grid 
+squares[pacmanCurrentIndex].classList.add('pac-man');
 
 

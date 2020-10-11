@@ -35,7 +35,8 @@ html, body {
 }
 
 .pac-man {
-    background-color: yellow;
+    background-color: orange;
     border-radius: 7.5px;
+    border: none;
 }
 
