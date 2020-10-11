@@ -2,6 +2,7 @@ const width = 28; // Number of grid squares
 const grid = document.querySelector('.grid');
 const scoreDisplay = document.getElementById('score');
 let squares = [];
+let score = 0; 
 
 // Store total number of square grids in a layout array: 28 * 28 = 784
 // 0 represents pac-dots 
@@ -151,8 +152,16 @@ function control(e) {
             break;
         
     }
-    squares[pacmanCurrentIndex].classList.add('pac-man');
+        squares[pacmanCurrentIndex].classList.add('pac-man');
+        pacDotsEaten();
+        }
+        document.addEventListener('keyup', control);
+
+    // Eating Pacdots and displaying the score using innerHTML
+    function pacDotsEaten() {
+        if(squares[pacmanCurrentIndex].classList.contains('pac-dot')) {
+            squares[pacmanCurrentIndex].classList.remove('pac-dot');
+            score++;
+            scoreDisplay.innerHTML = score;
+        }
     }
-    document.addEventListener('keyup', control);
-
-
